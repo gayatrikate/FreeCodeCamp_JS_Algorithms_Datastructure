@@ -1,0 +1,29 @@
+function convertHTML(str) {
+
+let convert= (char) =>{
+  switch(char) {
+    case "&":
+    str=str.replace("&","&amp;");
+    break;
+    case "<" :
+    str=str.replace("<" ,"&lt;" )
+    break;
+    case ">" :
+    str=str.replace(">" ,"&gt;" )
+    break;
+    case '"' :
+    str=str.replace('"' ,"&quot;" )
+    break;
+    case "'" :
+    str=str.replace("'" ,"&apos;" )
+    break;
+  }
+}
+  for(let i=0;i<str.length;i++){
+    convert(str[i])
+  }
+  console.log(str)
+  return str;
+}
+convertHTML('Stuff in "quotation marks"')
+convertHTML("Sixty > twelve")

@@ -1,0 +1,168 @@
+let numbersAndNumerals=[
+  {number:1000,roman:'M'},
+  {number:900,roman:'CM'},
+  {number:500,roman:'D'},
+  {number:400,roman:'CD'},
+  {number:100,roman:'C'},
+  {number:90,roman:'XC'},
+  {number:50,roman:'L'},
+  {number:40,roman:'XL'},
+  {number:10,roman:'X'},
+  {number:9,roman:'IX'},
+  {number:5,roman:'V'},
+  {number:4,roman:'IV'},
+  {number:1,roman:'I'}
+]
+
+
+function convertToRoman(num) {
+  let romanLetter="";
+
+  for(let i=0;i<numbersAndNumerals.length;i++){
+    if(numbersAndNumerals[i].number<=num){
+      num=num-numbersAndNumerals[i].number;
+      romanLetter =romanLetter +numbersAndNumerals[i].roman;
+      i--;
+    }
+
+  }
+console.log(romanLetter)
+ return romanLetter;
+}
+
+convertToRoman(53);
+***************************************************************************
+
+let numbersAndNumerals=[
+  {number:1000,roman:'M'},  //0
+  {number:900,roman:'CM'},  //1
+  {number:500,roman:'D'},   //2
+  {number:400,roman:'CD'},  //3
+  {number:100,roman:'C'},   //4
+  {number:90,roman:'XC'},   //5
+  {number:50,roman:'L'},    //6
+  {number:40,roman:'XL'},   //7
+  {number:10,roman:'X'},    //8
+  {number:9,roman:'IX'},    //9
+  {number:5,roman:'V'},     //10
+  {number:4,roman:'IV'},    //11
+  {number:1,roman:'I'}      //12
+]
+
+
+function convertToRoman(num) {
+  let romanLetter="";
+
+  for(let i=0;i<numbersAndNumerals.length;i++){
+    console.log("starting "+i)
+    if(numbersAndNumerals[i].number<=num){
+      num=num-numbersAndNumerals[i].number;
+      romanLetter =romanLetter +numbersAndNumerals[i].roman;
+      console.log("before minus "+i)
+      i--;
+      console.log("after minus "+i)
+    }
+
+  }
+console.log(romanLetter)
+ return romanLetter;
+}
+
+convertToRoman(29);
+
+
+
+o/p ===>
+
+starting 0
+starting 1
+starting 2
+starting 3
+starting 4
+starting 5
+starting 6
+starting 7
+starting 8
+before minus 8
+after minus 7
+starting 8
+before minus 8
+after minus 7
+starting 8
+starting 9
+before minus 9
+after minus 8
+starting 9
+starting 10
+starting 11
+starting 12
+XXIX
+
+we are doing i-- , so that i can start from where it was left.
+so at starting i was 8, then after finishing the loop it should again start to check from 8 not from 9
+so we do i-- i.e 8 ==>7 ==>i++ ==>starts from 8 again
+
+==>1000<1581
+
+  1581
+- 1000
+--------
+581
+
+string builder = "M"
+
+==>500<581
+   
+   581
+-  500
+---------
+81
+
+string builder = "MD"
+
+===>50<81
+   
+   81
+-  50
+----------
+31
+
+string builder = "MDL"
+
+==>10<31
+
+  31
+- 10
+------
+21
+
+string builder = "MDLX"
+
+===>10<21
+
+  21
+- 10
+-------
+11
+
+string builder = "MDLXX"
+
+====>10<11
+
+  11
+- 10
+-------
+1
+
+string builder = "MDLXXX"
+
+===>1<=1
+
+  1
+- 1
+-------
+0
+
+string builder = "MDLXXXI"
+
+https://www.youtube.com/watch?v=g_ISxHcg-RM

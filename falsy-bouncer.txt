@@ -1,0 +1,46 @@
+function bouncer(arr) {
+ let newArr=[];
+  for(let i=0;i<arr.length; i++)
+  { 
+    if(arr[i]){
+      newArr.push(arr[i]);
+    }
+  }
+  console.log(newArr);
+  return newArr;
+}
+
+bouncer([7, "ate", "", false, 9]);
+**************************************************************
+function bouncer(arr) {
+  let arr2= []
+  for(let i=0;i<arr.length;i++){
+    let value = Boolean(arr[i]) 
+    if(value){
+      arr2.push(arr[i])
+    }
+  }
+  console.log(arr2)
+  return arr2;
+}
+
+bouncer([7, "ate", "", false, 9,true]);
+*****************************************************************
+function bouncer(arr) {
+  return arr.filter((item) => {
+    if(Boolean(item) === true )
+    return item
+  } );
+}
+
+console.log(bouncer([7, "ate", "", false, 9,true]))
+*********************************************************************
+function bouncer(arr) {
+  console.log(Boolean(arr[2]))
+  return arr.filter((item) => {
+    if(Boolean(item))
+    return item
+  } );
+}
+
+console.log(bouncer([7, "ate", "", false, 9,true]))

@@ -1,0 +1,15 @@
+function confirmEnding(str, target) {
+let a= str.length
+let tlen = target.length
+ let b=str.substring(a-tlen,a)
+ console.log(b);
+ if(b===target) 
+ return true
+ else{
+   return false
+ }
+
+}
+
+confirmEnding("Congratulation", "on")
+//confirmEnding("Bastian", "n");

@@ -1,0 +1,47 @@
+function translatePigLatin(str) {
+  let consonantRegex = /[^aeiou]+/;
+  let myConsonants = str.match(consonantRegex);
+  if('aeiou'.includes(str[0])){
+    return str.concat("way")
+  }
+  else if(myConsonants != null){
+  return str.replace(myConsonants,"").concat(myConsonants).concat("ay");
+  }
+ 
+}
+
+console.log(translatePigLatin("algorithm"));
+
+*************************************************************************************
+function translatePigLatin(str) {
+  let vowels="aeiouAEIOU"
+  let isVowel=false
+  let str2=""  
+    if(vowels.includes(str[0])){
+      isVowel=true
+      str=str.concat("way")
+  }
+
+  // if(isVowel){
+  //   str=str.concat("way")
+  // }
+
+ if(!isVowel){
+   // console.log("consonant")
+    for(let i=0;i<str.length;i++){
+      if(vowels.includes(str[i])){
+        break;
+      }
+      else{
+        str2 = str2.concat(str[i]) //this is the consonant list
+      }
+    }
+  str=str.concat(str2)       
+  str = str.slice(str2.length).concat("ay")
+  }
+  //console.log(str2)
+  console.log(str)
+  return str;
+}
+
+translatePigLatin("glove");

@@ -1,0 +1,36 @@
+function sumAll(arr) {
+  let a=arr[0];
+  let b=arr[1];
+  let sum=0;
+  if(a<b){
+  for(let i=a;i<=b;i++){
+    sum+=i;
+    }
+    return sum;
+  }
+
+  else{
+    for(let i=a;i>=b;i--){
+    sum+=i;
+  }
+  return sum;
+  }
+
+}
+
+
+console.log(sumAll([10, 5]));
+************************************************************
+
+function sumAll(arr) {
+  const [first,last]= arr.sort((a,b)=>{ return a-b})
+  let sum=0
+  for( let i=first;i<=last;i++ ){
+    sum+=i
+  }
+console.log(sum);
+return sum
+}
+
+sumAll([15, 10]);
+

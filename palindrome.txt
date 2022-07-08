@@ -1,0 +1,18 @@
+function palindrome(str) {
+ let a=str.toLowerCase();
+ let regex=/[a-z]/g
+ console.log(a)
+ let regex1=a.match(regex)
+ console.log(regex1)
+ let b=a.split("").reverse(a).join("")
+ if(b===a){
+  return true;
+ }
+ else{
+   return false
+ }
+}
+
+
+
+console.log(palindrome("eY1e"));

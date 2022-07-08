@@ -1,0 +1,79 @@
+function sumFibs(num) {
+let a=[1,1];
+let b=[];
+let sum=0;
+  for(let i=2;i<=num;i++){
+    let fib=0;
+    fib=a[i-1]+a[i-2];
+    if(fib<=num){
+     a.push(fib)
+    }
+  }
+//console.log(a)
+for(let i=0;i<a.length;i++){
+  if(a[i]%2!=0){
+  sum+=a[i];
+  }
+}
+console.log(sum)
+  return sum;
+}
+
+sumFibs(75025);
+***************************************************************************
+
+function sumFibs(num) {
+  let a=0
+  let i=1
+  let curr=1;
+  let prev =1;
+  let fib=[prev,curr]
+  while(a<num){
+    a=curr+prev;
+    if(a<=num){
+      fib.push(a)
+      prev=curr;
+    curr=a;
+    }
+    
+  }
+  
+  console.log(fib)
+  let sum=0
+  for(let i=0;i<fib.length;i++){
+    if(fib[i]%2!=0){
+      sum+=fib[i]
+    }
+  }
+  console.log(sum)
+  return sum;
+}
+
+sumFibs(10);
+***********************************************************************************
+function sumFibs(num) {
+ let prev=0
+ let curr=1;
+ let arr=[1]
+ let sum=0
+
+  for(let i=0;i<num;i++){
+    let fib=prev+curr
+    prev=curr
+    curr=fib
+    arr.push(fib)
+  }
+
+  for(let i=0;i<arr.length;i++){
+    if(arr[i] % 2 !==0 && arr[i] <=num ){
+   //   console.log(arr[i])
+      sum +=arr[i]
+    }
+  }
+
+ // console.log(arr)
+  console.log(sum);
+  return sum;
+}
+
+sumFibs(10);

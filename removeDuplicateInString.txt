@@ -1,0 +1,20 @@
+function test(str) {
+  let a
+  let b=[]
+  a=str.split(" ")
+  for(let i=0;i<a.length;i++){
+       // console.log(a[i])
+      if(b.includes(a[i])){
+          continue;
+      }
+      else{
+          b.push(a[i])
+      }
+  }
+  let c=b.join(" ")
+  console.log(c)
+  console.log(typeof(c))
+
+}
+
+test("This is is test test string");

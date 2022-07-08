@@ -1,0 +1,64 @@
+function dropElements(arr, func) {
+  let a;
+  let b=[];
+  for(let i=0;i<arr.length;i++){
+    if (func(arr[i])){
+      a=i;
+      console.log(a);
+      break;
+    }
+  }
+
+if(a>=0){
+b=arr.slice(a);
+console.log(b)
+return b;
+  }
+
+else{
+  return b;
+}
+
+}
+//dropElements([1, 2, 3, 4], function(n) {return n > 5;})
+dropElements([1, 2, 3,9,2], function(n) {return n > 2; });
+
+
+function dropElements(arr, func) {
+let a=[]
+  for(let i=0;i<=arr.length;i++){
+    if(func(arr[i]))
+    { 
+      a=arr.slice(i)
+      break
+    }
+    else{
+      a=arr.slice(i)
+      console.log(a)
+    }
+  }
+  console.log(a)
+  return a;
+}
+
+//dropElements([0, 1, 0, 1], function(n) {return n === 1;})
+//dropElements([1, 2, 3], function(n) {return n < 3; });
+dropElements([1, 2, 3,9,2], function(n) {return n > 2; });
+
+*****************************************************************************
+function dropElements(arr, func) {
+let newArr=[]
+  for(let i=0;i<arr.length;i++){
+    if(func(arr[i])){
+     newArr=[...arr]
+      newArr=newArr.slice(i)
+      break;
+    }
+  }
+  console.log(newArr)
+  return newArr;
+}
+
+dropElements([1, 2, 3, 4], function(n) {return n > 5;})
+//dropElements([0, 1, 0, 1], function(n) {return n === 1;})
+//dropElements([1, 2, 3], function(n) {return n < 3; });

@@ -1,0 +1,20 @@
+function palindrome(str) {
+  str=str.toLowerCase();
+  let pregex=/([a-z0-9])/g
+ let a=str.match(pregex);
+ //console.log(a);
+ let str1=a.join(""); //without revere string
+ console.log(str1)
+ let rStr=str1.split("").reverse().join("");
+ console.log("after revere")
+ console.log(rStr)
+ if(rStr===str1){
+  return true;
+ }
+ else{
+   return false
+ }
+}
+
+
+console.log(palindrome("0_0 (: /-\ :) 0-0"));

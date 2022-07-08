@@ -1,0 +1,35 @@
+Solution 1:With array methods
+
+function reverseString(str) {
+  str=(str.split("").reverse().join(""));
+  return str;
+}
+
+reverseString("hello");
+
+***************************************************
+Solution 2: Without array methods
+
+function rev(str) {
+  let reverseStr = "";
+  for (let char of str) {
+    reverseStr = char + reverseStr;
+    console.log(reverseStr);
+  }
+}
+
+rev("hello");
+
+*******************************************************
+Solution 3 : With for loop
+
+function reverseString(str) {
+  let rev=""
+  for(let i=0;i<str.length;i++){
+    rev=str[i] + rev
+  }
+  console.log(rev)
+  return rev
+}
+
+reverseString("hello");

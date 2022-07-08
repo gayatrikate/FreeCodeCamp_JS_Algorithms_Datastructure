@@ -1,0 +1,43 @@
+function destroyer(arr,...ar) {
+  //console.log(ar[0])
+  let newarr=[];
+  for(let i=0;i<arr.length; i++){
+    if(ar.indexOf(arr[i])==-1)
+    {
+      newarr.push(arr[i])
+    }
+  }
+  console.log(newarr);
+  return newarr;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3);
+destroyer([3, 5, 1, 2, 2], 2, 3, 5)
+destroyer(["tree", "hamburger", 53], "tree", 53)
+destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")
+
+************************************************************************************
+function destroyer(arr) {
+ let newarr=[]
+  newarr=[...arguments]
+  console.log(newarr[0])
+  let a= newarr.slice(1)
+  console.log(a)
+
+ let b= newarr[0].filter( (item) => { return (!a.includes(item)) } )
+
+ console.log(b)
+  return b;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+*************************************************************************************
+function destroyer(arr , ...arg2) {
+console.log(arg2)
+let b= arr.filter( (item) => { return (!arg2.includes(item)) } )
+ console.log(b)
+  return b;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);

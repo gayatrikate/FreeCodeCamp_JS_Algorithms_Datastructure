@@ -1,0 +1,44 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var romanToInt = function(s) {
+    let obj={
+  I:1,
+  V:5,
+  X:10,
+  L:50,
+  C:100,
+  D:500,
+  M:1000,
+}
+    let sum=0
+
+for(let i=0;i<s.length;i++){
+    
+   /* let curInt = obj[s[i]]
+    let nextInt = obj[s[i+1]]  */
+    
+    let curInt = obj[s.charAt(i)];
+    let nextInt = obj[s.charAt(i+1)];
+    if(nextInt){
+      if(curInt >= nextInt){
+      sum+=curInt
+    }else{
+      sum+=(nextInt-curInt);
+      i++;
+    }
+    } 
+    else{
+      sum+=curInt
+    }  
+}
+
+console.log(sum)
+    return sum
+};
+
+romanToInt("MCMXCIV")
+
+
+https://www.youtube.com/watch?v=9rfe5nXL05Q

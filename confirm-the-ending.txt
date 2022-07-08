@@ -1,0 +1,9 @@
+function confirmEnding(str, target) {
+ let remaningLength=0
+ let remaniningStr=""
+ remaningLength=str.length-target.length;
+ remaniningStr=str.slice(remaningLength);
+  return remaniningStr===target;
+}
+
+console.log(confirmEnding("Bastian", "n"));

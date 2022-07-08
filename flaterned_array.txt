@@ -1,0 +1,16 @@
+var array=[1,2,[[3,4,5],8],9,10]
+const flatten =(arr) => {
+  let someNewArray = arr.reduce((acc,item) => {
+    if(Array.isArray(item)){
+      acc=acc.concat(flatten(item));
+    }
+    else{
+      acc.push(item); 
+    }
+    return acc;
+},[])
+return someNewArray;
+}
+
+let a=flatten(array);
+console.log(a);
