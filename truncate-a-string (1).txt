@@ -1,3 +1,5 @@
+Solution 1:
+
 function truncateString(str, num) {
   // Clear out that junk in your trunk
   let str1="";
@@ -20,6 +22,8 @@ truncateString("A-tisket a-tasket A green and yellow basket", 8)
 //console.log(truncateString);
 
 ***************************************************************************
+Solution 2:
+
 function truncateString(str, num) {
   if(str.length>num){
  	 let str1= str.substring(0,num)
@@ -38,6 +42,7 @@ function truncateString(str, num) {
 
 truncateString("A-tisket a-tasket A green and yellow basket", 8);
 *******************************************************************************
+Solution 3:
 
 function truncateString(str, num) {
   let a=""
@@ -52,3 +57,17 @@ function truncateString(str, num) {
 }
 
 truncateString("A-tisket a-tasket A green and yellow basket", 8);
+
+***********************************************************************************
+Solution 4:
+
+function truncateString(str, num) {
+  if(str.length >num ){
+    return str.substr(0,num).concat("...")
+  }
+  else{
+    return str
+  }
+}
+
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8))
