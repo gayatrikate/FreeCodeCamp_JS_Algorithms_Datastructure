@@ -1,3 +1,5 @@
+Solution 1:
+
 function diffArray(arr1, arr2) {
   var newArr = [];
   function diff(a, b){
@@ -15,3 +17,27 @@ function diffArray(arr1, arr2) {
 }
 
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+************************************************************************************************
+Solution 2:
+
+function diffArray(arr1, arr2) {
+  
+  let newArr= []
+  
+  for(let i=0;i<arr1.length;i++){
+    if(!arr2.includes(arr1[i])){
+      newArr.push(arr1[i])
+    }
+  }
+  for(let i=0;i<arr2.length;i++){
+    if(!arr1.includes(arr2[i])){
+      newArr.push(arr2[i])
+    }
+  }
+    console.log(newArr)
+    return newArr
+}
+
+diffArray([1, 2, 3, 5,6], [1, 2, 3, 4, 5]);
+diffArray (["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"])
